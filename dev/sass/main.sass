@@ -1,0 +1,1076 @@
+@import "fonts"
+@import "libs"
+@import "sprite"
+@import "vars"
+
+html
+	box-sizing: border-box
+
+*, *::before, *::after
+	box-sizing: inherit
+
+html, body
+	height: 100%
+
+body
+	font-family: $default-font
+	font-size: 16px
+	font-weight: 400
+	line-height: 1
+	color: #000
+	overflow-x: hidden
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+::selection
+	background: #b3d4fc
+	text-shadow: none
+
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+.container
+	max-width: 1172px
+	width: 100%
+	margin: 0 auto
+
+.clearfix::after
+	content: ""
+	display: table
+	clear: both
+
+.page-header
+	min-height: 1025px
+	background: maroon url("../img/header-bg.jpg") center top no-repeat
+	background-size: cover
+	position: relative
+	overflow: hidden
+	&::before
+		display: block
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #111
+		opacity: .7
+
+.logo
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	&__link
+		display: block
+		// margin-top: 40px
+		// margin-right: 200px
+
+.page-header__logo
+	margin-top: 40px
+	margin-right: 200px
+
+.menu
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	margin-top: 40px
+	max-width: 687px
+	&__list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin-left: 35px
+		&:first-child
+			margin-left: 0
+		&_active .menu__link
+			color: #c7b299
+			&:hover
+				color: #c7b299
+	&__link
+		font-family: $thin-font
+		font-weight: 300
+		font-size: 14px
+		color: #fff
+		text-decoration: none
+		text-transform: capitalize
+		transition: .2s ease
+		&:hover
+			color: GoldenRod
+
+.user
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	margin-top: 35px
+	&__item
+		display: inline-block
+		vertical-align: top
+		width: 25px
+		height: 25px
+		margin-left: 10px
+		&:first-child
+			margin-left: 22px
+
+.user__item_profile
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate3d(-50%,-50%,0)
+		+sprite($s-profile)
+
+.user__item_search
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate3d(-50%,-50%,0)
+		+sprite($s-search)
+
+
+
+/* Slider */
+
+.bx-wrapper
+	background: transparent
+	border: none
+	box-shadow: none
+.page-header .bx-wrapper
+	margin-top: 280px
+
+
+.bx-wrapper .bx-pager.bx-default-pager a
+	background: #9c9b9a
+	border: #9c9b9a 2px solid
+	border-color: transparent
+	width: 16px
+	height: 16px
+	border-radius: 50%
+
+.bx-wrapper .bx-pager.bx-default-pager a.active
+	position: relative
+	&::before
+		display: block
+		content: '123'
+		position: absolute
+		left: -4px
+		top: -4px
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		background-color: transparent
+		border: 2px solid #d3c1ad
+		color: #123
+
+//!!!
+.bx-wrapper .bx-pager.bx-default-pager a:focus
+	background-color: #9c9b9a
+.bx-wrapper .bx-pager.bx-default-pager a.active:focus
+	background-color: transparent
+
+//!
+.bx-wrapper .bx-pager.bx-default-pager a:hover
+	background: #fff
+.bx-wrapper .bx-pager.bx-default-pager a.active
+	background: transparent
+
+.page-header .bx-wrapper .bx-controls-direction a.bx-prev,
+.page-header .bx-wrapper .bx-controls-direction a.bx-next
+	width: 40px
+	height: 74px
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate3d(-50%,-50%,0)
+		+sprite($s-arrow)
+
+.bx-wrapper .bx-controls-direction a.bx-prev
+	transform: rotate(180deg)
+
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager
+	bottom: -300px
+	// text-align: center
+/* =Slider end= */
+
+.slider__item
+	text-align: center
+
+.slider__preTitle
+	font-size: 36px
+	color: #fff
+	font-weight: 500
+	display: inline-block
+	vertical-align: top
+	margin-bottom: 20px
+
+.slider__title
+	margin: 0
+		bottom: 30px
+	color: #fff
+	font-size: 52px
+	font-weight: 700
+
+.slider__description
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 16px
+	line-height: 24px
+	color: #fff
+	max-width: 570px
+	display: inline-block
+	margin: 0
+		bottom: 50px
+
+.slider__btn
+	margin: 0 auto
+
+.btn
+	display: block
+	max-width: 170px
+	width: 100%
+	height: 53px
+	line-height: 55px
+
+	color: #fff
+	font-weight: 700
+	text-transform: uppercase
+	text-decoration: none
+	text-align: center
+
+	background-color: #998675
+	border-radius: 3px
+
+	box-shadow: inset 0 -3px 0 #736357
+
+	transition: .5s ease
+	&:hover
+		background-color: #777
+		box-shadow: inset 0 -3px 0 #333
+
+
+.services
+	padding: 80px 0 150px
+	background-color: #fff
+
+.service
+	text-align: center
+	&__item
+		float: left
+		width: 25%
+		// display: inline-block
+		// width: 24%
+		padding: 80px 15px 0
+		text-align: center
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -25px
+			width: 50px
+			height: 50px
+			background: url("../img/services-sprite.png") no-repeat 
+		&::after
+			content: ''
+			position: absolute
+			left: 50%
+			margin-left: -35px
+			width: 70px
+			height: 3px
+			background-color: #f1eee9
+			display: block
+		&:hover::after
+			background-color: #c7b299
+
+.service__item.web::before
+	background-position: 3px 0
+.service__item.web:hover::before
+		background-position: -80px 0
+
+.service__item.dev::before
+	background-position: 3px -80px
+.service__item.dev:hover::before
+	background-position: -77px -80px
+
+.service__item.cust::before
+	background-position: 3px -167px
+.service__item.cust:hover::before
+	background-position: -77px -167px
+
+.service__item.mar::before
+	background-position: 0 -240px
+.service__item.mar:hover::before
+	background-position: -83px -240px
+
+.service__title
+	margin: 0
+	color: #555
+	font-size: 22px
+	font-weight: 600
+	margin-bottom: 20px
+
+.service__text
+	margin: 0
+		bottom: 25px
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 14px
+	line-height: 24px
+	color: #8c8c8c
+
+.realize
+	background-color: #fbfaf8
+
+.realize__block
+	padding-top: 80px
+	text-align: center
+
+.glob-title
+	margin: 0
+		bottom: 30px
+	color: #555
+	font-size: 30px
+	font-weight: 600
+
+.glob-text
+	display: inline-block
+	text-align: center
+	max-width: 760px
+	color: #8c8c8c
+	font-family: $thin-font
+	font-size: 16px
+	line-height: 28px
+	font-weight: 300
+	margin: 0
+		bottom: 40px
+
+.realize__promo
+	background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%)
+	padding: 50px 0
+
+.realize__wrap
+	float: left
+	padding-left: 30px
+	max-width: 560px
+	width: 100%
+
+.realize__btn
+	float: right
+	padding-right: 3px
+	padding-top: 2px
+	max-width: 173px
+	width: 100%
+
+.realize__promoTitle
+	font-size: 28px
+	font-weight: 400
+	color: #fff
+	margin: 0
+		bottom: 10px
+	&_accent
+		color: #c7b299
+
+.realize__promoText
+	color: #615855
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 18px
+
+.proj
+	padding: 80px 0
+	text-align: center
+
+.mixitup__items
+	padding: 0 0 0 30px
+
+.mixitup__item
+	float: left
+	width: 33.33%
+	// height: 280px
+	padding-right: 30px
+	margin-bottom: 30px
+	// &:nth-child(3n+2)
+	// 	padding: 0
+	position: relative
+	&:hover .mixitup__inner
+		display: block
+
+.mixitup__inner
+	display: none
+	position: absolute
+	text-align: center
+	top: 50%
+	left: 50%
+	margin-left: -65px
+	margin-top: -75px
+	width: 100px
+	height: 300px
+
+.mixitup__i
+	display: inline-block
+	vertical-align: top
+	width: 30%
+	height: 30px
+	background: url("../img/mixitup-sprite.png") no-repeat
+
+.mixitup__i.chain
+	background-position: 0px 0px
+	&:hover
+		background-position: -33px 0px
+
+.mixitup__i.link
+	background-position: 2px -30px
+	&:hover
+		background-position: -31px -30px
+
+.mixitup__img
+	width: 100%
+	height: 280px
+
+.mixitup__overlay
+	position: relative
+	&::before
+		display: none
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #111
+		opacity: .7
+
+
+.mixitup__list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	font-size: 0
+	margin-bottom: 40px
+
+
+.mixitup__button
+	display: inline-block
+	vertical-align: top
+	font-size: 14px
+	height: 32px
+	line-height: 33px
+	font-family: $thin-font
+	font-weight: 300
+	color: #8c8c8c
+	background-color: #fff
+	border: 1px solid #ebebeb
+	border-radius: 3px
+	padding: 0 16px
+	margin-right: 10px
+	cursor: pointer
+	transition: all .5s ease
+	&:last-child
+		margin-right: 0
+
+.mixitup-control-active
+	background-color: #998675
+	color: #fff
+
+.mixitup__textarea
+	background-color: #fbfaf8
+	padding: 24px 0 24px 24px
+	position: relative
+	text-align: left
+	&::before
+		content: ''
+		position: absolute
+		top: -10px
+		left: 21px
+		// width: 15px
+		// height: 10px
+		// background-color: red
+		z-index: 100
+		border-style: solid
+		border-color: transparent transparent #fbfaf8 transparent
+		border-width: 0 15px 10px 15px
+
+.mixitup__title
+	margin: 0
+		bottom: 12px
+	color: #c7b299
+	font-size: 20px
+	font-weight: 500
+	transition: .5s linear
+
+.mixitup__text
+	display: inline-block
+	vertical-align: top
+	color: #d1d1d1
+	font-family: $thin-font
+	font-size: 14px
+	line-height: 20px
+	font-weight: 300
+
+.mixitup__item:hover .mixitup__textarea
+	background-color: #362f2d
+
+.mixitup__item:hover .mixitup__textarea::before
+	border-color: transparent transparent #362f2d transparent
+
+.mixitup__item:hover .mixitup__title
+	color: #fff
+
+.mixitup__item:hover .mixitup__text
+	color: #c7b299
+
+.mixitup__item:hover .mixitup__overlay::before
+	display: block
+
+.mixitup__btn
+	margin: 40px auto 0
+
+.video
+	min-height: 705px
+	background: #111 url("../img/video-bg.jpg")
+	background-position: center top
+	background-size: cover
+	text-align: center
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #111
+		opacity: .5
+		z-index: 0
+
+
+.video__title
+	margin: 0
+		bottom: 28px
+	color: #fff
+	font-size: 30px
+	font-weight: 500
+
+.video__description
+	max-width: 570px
+	width: 100%
+	text-align: center
+	margin: 0 auto 28px
+	color: white
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 16px
+	line-height: 28px
+
+.video__timer
+	display: inline-block
+	color: #c7b299
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 14px
+	line-height: 24px
+	margin-bottom: 38px
+
+.video__btn
+	display: block
+	margin: 0 auto 42px
+	width: 100px
+	height: 100px
+	background-color: rgba(0, 0, 0, .2)
+	// opacity: .2
+	border-radius: 50%
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		+sprite($s-play)
+		transform: translate3d(-50%,-50%,0)
+
+.video__container
+	max-height: 300px
+	position: absolute
+	margin: auto
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	z-index: 1
+
+.device
+	background-color: #fbfaf8
+
+.device__wrapper
+	padding-top: 78px
+
+.device__img
+	float: left
+	margin-left: 30px
+	margin-right: 80px
+	// display: inline-block
+	// vertical-align: top
+
+.device__inner
+	margin-top: 115px
+	// margin-right: 40px
+	display: inline-block
+	vertical-align: top
+	width: 51%
+
+// .device__title
+// 	color: #555
+// 	font-size: 30px
+// 	font-weight: 600
+// 	margin: 0
+// 		bottom: 40px
+
+.device__text
+	text-align: left
+	// color: #8c8c8c
+	// font-family: $thin-font
+	// font-weight: 300
+	font-size: 14px
+	// line-height: 22px
+	// margin: 0
+	// 	bottom: 40px
+
+.device__list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	margin-left: 44px
+
+.device__item
+	font-size: 16px	
+	line-height: 32px
+	color: #8c8c8c
+	padding-left: 50px
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 4px
+		// width: 21px
+		// height: 21px
+		// background-color: #c7b299
+		// border-radius: 50%
+		+sprite($s-darrow)
+
+
+.statistic
+	background-color: #f4f5f8
+	background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%)
+	// min-height: 300px
+	padding: 60px 0
+
+.statistic__wrap
+	text-align: center
+
+.statistic__item
+	display: inline-block
+	vertical-align: top
+	max-width: 160px
+	width: 100%
+	margin-right: 70px
+	text-align: center
+	padding-top: 80px
+	&:last-child
+		margin-right: 0
+
+.statistic__count
+	display: block
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 48px
+	color: #fff
+	margin-bottom: 18px
+
+.statistic__info
+	display: block
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 14px
+	color: #c7b299
+	padding-bottom: 30px
+	position: relative
+	&::after
+		position: absolute
+		content: ''
+		bottom: 0
+		left: 50%
+		width: 30px
+		margin-left: -15px
+		height: 2px
+		display: block
+		background-color: #fff
+
+.statistic__item
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		top: 0
+		left: 50%
+		width: 60px
+		height: 60px
+		margin-left: -20px
+
+.statistic__item.clients::before
+	+sprite($s-clients)
+
+.statistic__item.coffee::before
+	+sprite($s-coffee)
+
+.statistic__item.posts::before
+	+sprite($s-posts)
+
+.statistic__item.likes::before
+	+sprite($s-likes)
+
+.statistic__item.launched::before
+	+sprite($s-launched)
+
+.recent
+	min-height: 755px
+	text-align: center
+	padding: 80px 0
+
+
+.bx-slider__item
+	text-align: left
+	// max-width: 370px
+	padding-bottom: 30px
+	transition: .5s linear
+
+.bx-slider__overlay
+	// width: 370px
+	height: 220px
+	overflow: hidden
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(17, 17, 17, .7)
+		display: none
+
+.bx-slider__inner
+	position: absolute
+	top: 20px
+	left: 20px
+	text-align: center
+	z-index: 1
+
+
+.bx-slider__date
+	display: block
+	padding: 10px 15px
+	color: #fff
+	font-size: 24px
+	font-family: $thin-font
+	font-weight: 300
+	background-color: #363636
+	border-radius: 3px 3px 0 0
+	transition: .5s linear
+
+.bx-slider__month
+	display: block
+	padding: 6px 15px
+	font-size: 12px
+	color: #fff
+	background-color: #252525
+	border-radius: 0 0 3px 3px
+	transition: .5s linear
+
+.bx-slider__title
+	font-weight: 500
+	font-size: 20px
+	color: #555
+	margin: 25px 0
+	padding-left: 25px
+	transition: .5s linear
+
+.bx-slider__description
+	font-family: $thin-font
+	font-size: 300
+	font-size: 14px
+	line-height: 22px
+	color: #8c8c8c
+	margin: 0
+		bottom: 25px
+	padding-left: 25px
+	transition: .5s linear
+
+.bx-slider__link
+	display: inline-block
+	font-weight: 400
+	font-size: 14px
+	color: #c7b299
+	padding-right: 25px
+	padding-left: 25px
+	position: relative
+	text-decoration: none
+	transition: .35s ease
+	&:hover
+		color: #fff
+		&::before
+			+sprite($s-bxl2)
+	&::before
+		content: ''
+		position: absolute
+		top: 4px
+		right: 0
+		+sprite($s-bxl)
+	&_info
+		color: #fff
+		padding-left: 0
+		&::before
+			+sprite($s-bxl2)
+		&:hover
+			color: #c7b299
+			&::before
+				+sprite($s-bxl)
+.bx-slider__item:hover
+	background-color: #362f2d
+
+.bx-slider__item:hover .bx-slider__title
+		color: #c7b299
+
+.bx-slider__item:hover .bx-slider__description
+		color: #fff
+
+.bx-slider__item:hover .bx-slider__date
+	background-color: #c7b299
+
+.bx-slider__item:hover .bx-slider__month
+	background-color: #a48d72
+
+.bx-slider__item:hover .bx-slider__overlay::before
+	display: block
+
+
+.recent .bx-wrapper .bx-controls-direction a.bx-prev,
+.recent .bx-wrapper .bx-controls-direction a.bx-next
+	position: relative
+	// width: 40px
+	// height: 74px
+	// font-size: 0
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		// transform: translate3d(-50%,-50%,0)
+		
+.recent .bx-wrapper .bx-controls-direction a.bx-prev::before
+	+sprite($s-bx-w)
+	left: -25px
+	top: 40px
+	transform: rotate(180deg)
+	
+.recent .bx-wrapper .bx-controls-direction a.bx-next::before
+	+sprite($s-bx-w)
+	left: 25px
+	top: 40px
+.recent .bx-wrapper .bx-controls-direction a.disabled
+	display: inline
+
+.recent .bx-wrapper .bx-controls-direction a.bx-next.disabled::before 
+	+sprite($s-bx-d)
+	cursor: default
+
+.recent .bx-wrapper .bx-controls-direction a.bx-prev.disabled::before 
+	+sprite($s-bx-d)
+	cursor: default
+
+.partners
+	padding: 135px 0
+	min-height: 448px
+	background: #ccc url("../img/partners-bg.jpg") center no-repeat
+	background-size: cover
+	text-align: center
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(17, 17, 17, .7)
+
+.partners__item
+	display: inline-block
+	vertical-align: middle
+	margin-right: 88px
+	position: relative
+	&:last-child
+		margin-right: 0
+
+.info
+	padding: 76px 0
+	background-color: #191919
+
+.info__item
+	float: left
+	width: 270px
+	height: 100%
+	// background-color: #fff
+	margin-right: 30.6px
+	text-align: left
+	&:last-child
+		margin-right: 0
+
+.info__text
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 14px
+	line-height: 24px
+	color: #555
+	margin: 22px 0
+	transition: .5s ease
+	&_twttr
+		text-decoration: none
+		color: #00bff3
+	&_link
+		text-decoration: none
+		color: #959595
+
+
+.info__title
+	font-weight: 700
+	font-size: 24px
+	margin: 0
+		top: 20px
+		bottom: 30px
+	color: #fff
+
+.info__block
+	// padding-top: 20px
+	padding-bottom: 20px
+	margin-bottom: 20px
+	border-bottom: 1px solid #252525
+	&:last-child
+		border-bottom: none
+
+.info__date
+	display: inline-block
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 12px
+	color: #363636
+	margin-bottom: 10px
+	transition: color .5s ease
+	&_short
+		margin-bottom: 0
+		margin-top: 12px
+
+.info__description
+	margin: 0
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 14px
+	line-height: 20px
+	color: #555
+	transition: color .5s ease
+
+.info__block:hover .info__date
+	color: #fff
+
+.info__block:hover .info__text,
+.info__block:hover .info__description
+	color: #c7b299
+
+.info__widgets
+	width: 100%
+	font-size: 0
+	// padding-left: 10px
+
+.info__widget
+	max-width: 135px
+	width: 100%
+	height: 100px
+	overflow: hidden
+	display: inline-block
+	vertical-align: top
+	text-align: right
+	width: 50%
+	margin-bottom: 10px
+	padding-left: 10px
+	// padding: 0 10px 10px 0
+
+
+.footer
+	padding: 42px 0
+	background-color: #111111
+
+.footer__copyright
+	float: left
+	display: inline-block
+	vertical-align: bottom
+	padding-top: 3px
+
+.footer__list
+	float: right
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.footer__item
+	display: inline-block
+	vertical-align: bottom
+	margin-right: 25px
+	position: relative
+	&:last-child
+		margin-right: 0
+		&::before
+			display: none
+	&::before
+		content: ''
+		position: absolute
+		top: 3px
+		right: -15px
+		width: 1px
+		height: 12px
+		background-color: #252525
+
+.footer__copyright,
+.footer__link
+	font-family: $thin-font
+	font-weight: 300
+	font-size: 13px
+	color: #555
+	text-decoration: none
+
+.footer__link
+	transition: .5s ease
+
+
+.footer__link:hover
+	color: #c7b299
+
+@import "media"
